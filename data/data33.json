@@ -1,0 +1,36 @@
+{
+  "err": "",
+  "res": "",
+  "data": [
+    {
+      "trans_id": "1",
+      "TotalAmount": "207.65",
+      "store_city": "温州市"
+    },
+    {
+      "trans_id": "2",
+      "TotalAmount": "470.37",
+      "store_city": "宁波市"
+    },
+    {
+      "trans_id": "8",
+      "TotalAmount": "250.96",
+      "store_city": "上海"
+    },
+    {
+      "trans_id": "13",
+      "TotalAmount": "85.90",
+      "store_city": "长沙市"
+    },
+    {
+      "trans_id": "14",
+      "TotalAmount": "74.21",
+      "store_city": "海口市"
+    },
+    {
+      "trans_id": "16",
+      "TotalAmount": "96.00",
+      "store_city": "北京"
+    }
+  ]
+}

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>漏刻有时刷脸支付数据可视化监控系统</title>
+    <meta name="description" content="漏刻有时（LOCKDATA），智能化数据展示解决方案服务商，让更多的人看到数据可视化的魅力，促进前沿技术与产业融合，帮助非专业的工程师通过图形化的界面轻松搭建专业水准的可视化应用，满足会议展览、业务监控、风险预警、地理信息分析等多种业务的展示需求。">
+    <script src="../js/jquery.js"></script>
+    <link rel="stylesheet" href="../css/com.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <!--<script src="../js/scroll.js"></script>-->
+    <script src="../js/time.js"></script>
+</head>
+<body>
+<header>
+    <!--消息提示：滚动公告 -->
+    <div class="msg">
+        <img src="../img/sound-high.png" alt="">
+        <!--轮播字体-->
+        <div class="scroll_div">
+            <div class="scroll_begin">
+                <ul>
+                    <li><a href="#">文字1:感谢您的长期支持，本平台目前提供的通道带积分，支持大部分银行，欢迎您的使用！</a></li>
+                    <li><a href="#">文字2:感谢您的长期支持，本平台目前提供的通道带积分，支持大部分银行，欢迎您的使用！</a></li>
+                    <li><a href="#">文字3:感谢您的长期支持，本平台目前提供的通道带积分，支持大部分银行，欢迎您的使用！</a></li>
+                    <li><a href="#">文字4:感谢您的长期支持，本平台目前提供的通道带积分，支持大部分银行，欢迎您的使用！</a></li>
+                    <li><a href="#">文字5:感谢您的长期支持，本平台目前提供的通道带积分，支持大部分银行，欢迎您的使用！</a></li>
+                    <li><a href="#">文字6:感谢您的长期支持，本平台目前提供的通道带积分，支持大部分银行，欢迎您的使用！</a></li>
+                    <li><a href="#">文字7:感谢您的长期支持，本平台目前提供的通道带积分，支持大部分银行，欢迎您的使用！</a></li>
+                </ul>
+            </div>
+            <div class="scroll_end"></div>
+        </div>
+    </div>
+    <!--logo设置居中-->
+    <div class="logo">
+        <img src="../img/logo.png" alt="">
+    </div>
+    <!--设置图片左右-->
+    <div class="h_msg">
+        <div class="img_l">
+            <img src="../img/face.png" alt="">
+        </div>
+        <div class="img_r">
+            <img src="../img/payico.png" alt="">
+        </div>
+    </div>
+</header>
+<main>
+    <!--适时交易-->
+    <section class="bg">
+        <div class="g_time">
+            <div class="g_time_t">
+                <h1>
+                    今日适时交易总金额
+                    <span>(单位：元)</span>
+                </h1>
+                <div class="time">
+                    <!--2019-09-30&nbsp;&nbsp;星期一&nbsp;&nbsp;08:36:22-->
+                </div>
+            </div>
+            <div class="g_time_c">
+                <span></span>
+            </div>
+        </div>
+        <div class="g_null">
+            <ul class="count_lists">
+                <li>
+                    <img src="../img/zb1.png" alt="">
+                    <p id="zb1">888888</p>
+                    <span>今日总交易笔数</span>
+                </li>
+                <li>
+                    <img src="../img/zb2.png" alt="">
+                    <p id="zb2">88888</p>
+                    <span>今日总交易商户数</span>
+                </li>
+                <li>
+                    <img src="../img/zb3.png" alt="">
+                    <p id="zb3">8888</p>
+                    <span>今日总发卡量</span>
+                </li>
+            </ul>
+        </div>
+        <script>
+            $.get('../data/data11.json',function (data) {
+                $('.g_time_c>span').html(data.data.totaldata)
+            })
+            $.get('../data/data12.json',function (data) {
+                $('#zb1').html(data.data.totaldata)
+            })
+            $.get('../data/data13.json',function (data) {
+                $('#zb2').text(data.data.totaldata)
+            })
+            $.get('../data/data14.json',function (data) {
+                $('#zb3').text(data.data.totaldata)
+            })
+        </script>
+    </section>
+    <section>
+        <div class="scroll_list">
+            <div class="bg">
+                <div class="g_time_t">
+                    <h2 class="h1">商户交易适时播报</h2>
+                </div>
+                <div class="scroll_list_c">
+                    <ul class="scroll_t">
+                        <li>商户名称</li>
+                        <li>交易金额</li>
+                        <li>交易时间</li>
+                        <li>交易方式</li>
+                        <li>支付账号</li>
+                    </ul>
+                    <ul class="scroll_c">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            $.ajax({
+                url: '../data/data21.json',
+                type: 'get',
+                success: function (data) {
+                    let Str = ''
+                    $.each(data.data,function (i, v) {
+                        Str += '<li><span>' + v.trans_store + '</span><span>' + v.trans_amount + '</span><span>' + v.trans_time + '</span><span>' + v.trans_payment + '</span><span>' + v.trans_account + '</span>'
+                    })
+                    $('.scroll_c').append(Str)
+                }
+            })
+        </script>
+        <div class="zhi_list">
+            <div class="bg">
+                <div class="g_time_t">
+                    <h2 class="h1">每日交易量</h2>
+                </div>
+                <div class="zhi_list_c">
+                    <div id="zhi" style="width: 100%;height:200px;"></div>
+                    <script type="text/javascript">
+                        // 基于准备好的dom，初始化echarts实例
+                        var myChart = echarts.init(document.getElementById('zhi'));
+                        // console.log(myChart)
+                        myChart.setOption({
+                            legend: {
+                                // data:['交易金额','交易笔数'],
+                                data:[
+                                    {
+                                        name: '交易金额',
+                                        // 强制设置图形为圆。
+                                        icon: 'rect',
+                                        // 设置文本为红色
+                                        textStyle: {
+                                            color: '#888'
+                                        }
+                                    },{
+                                        name: '交易笔数',
+                                        // 强制设置图形为圆。
+                                        icon: 'rect',
+                                        // 设置文本为红色
+                                        textStyle: {
+                                            color: '#888'
+                                        }
+                                    }
+                                ]
+                            },
+                            tooltip: {
+                                trigger: 'axis',
+                            },
+                            xAxis: {
+                                type: 'category',
+                                boundaryGap: false,
+                                data: [],
+                                // data: ['Heloskin科技美肤管理中心','','科技美肤管理中心','','科技美肤管理中心'],
+                                axisLabel: {
+                                    show: true,
+                                    textStyle: {
+                                        color: '#888',  //更改坐标轴文字颜色
+                                        fontSize : 12      //更改坐标轴文字大小
+                                    }
+                                },
+                                axisTick: {
+                                    show: false
+                                },
+                                axisLine:{
+                                    lineStyle:{
+                                        color:'#fff',
+                                        opacity: 0.2  //更改坐标轴颜色
+                                    }
+                                }
+
+                            },
+                            yAxis: {
+                                type: 'value',
+                                //设置轴线的属性
+                                axisLine:{
+                                    lineStyle:{
+                                        color:'#fff',
+                                        opacity: 0.2
+                                    }
+                                },
+                                axisLabel: {
+                                    show: true,
+                                    textStyle: {
+                                        color: '#888',  //更改坐标轴文字颜色
+                                        fontSize : 12      //更改坐标轴文字大小
+                                    }
+                                },
+                                //设置网格线颜色
+                                splitLine: {
+                                    show: true,
+                                    lineStyle:{
+                                        color: ['#fff'],
+                                        width: 1,
+                                        type: 'solid',
+                                        opacity:0.2
+                                    }
+                                }
+                            },
+                            series: [
+                                {
+                                    name: '交易金额',
+                                    type: 'line',
+                                    symbol: "none",
+                                    smooth: true,
+                                    data:[],
+                                    // data: [10, 100, 40 , 90, 830, 710],
+                                    itemStyle: {
+                                        normal: {
+                                            color: "yellow",
+                                            lineStyle: {
+                                                color: "yellow"
+                                            }
+                                        }
+                                    },
+                                },
+                                {
+                                    name: '交易笔数',
+                                    type: 'line',
+                                    symbol: "none",
+                                    smooth: true,
+                                    data:[],
+                                    // data: [30, 10, 40 , 90, 30, 70],
+                                    itemStyle: {
+                                        normal: {
+                                            color: "blue",
+                                            lineStyle: {
+                                                color: "blue"
+                                            }
+                                        }
+                                    },
+                                }
+                            ],
+                        });
+                        $.ajax({
+                            url: '../data/data22.json',
+                            type:'get',
+                            success:function (data) {
+                                // console.log(data.data)
+                                // console.log(data.data[1].trans_store)
+                                // 一位数组
+                                let data_name = []
+                                let data_count = []
+                                let data_num = []
+                                $.each(data.data,function (i, v) {
+                                    let data = v.trans_store
+                                    let data1 = v.trans_amount
+                                    let data2 = v.trans_frequency
+                                    data_name.push(data)
+                                    data_count.push(data1)
+                                    data_num.push(data2)
+                                })
+                                // console.log(data_name)
+                                // console.log(data_num)
+                                // console.log(data_count)
+                                myChart.setOption({
+                                    xAxis: {
+                                        type: 'category',
+                                        data:data_name
+                                    },
+                                    series: [
+                                        {
+                                            name: '交易金额',
+                                            type: 'line',
+                                            symbol: "none",
+                                            smooth: true,
+                                            data: data_count,
+                                            // data: [10, 100, 40 , 90, 830, 710],
+                                            itemStyle: {
+                                                normal: {
+                                                    color: "yellow",
+                                                    lineStyle: {
+                                                        color: "yellow"
+                                                    }
+                                                }
+                                            },
+                                        },
+                                        {
+                                            name: '交易笔数',
+                                            type: 'line',
+                                            symbol: "none",
+                                            smooth: true,
+                                            data:data_num,
+                                            // data: [30, 10, 40 , 90, 30, 70],
+                                            itemStyle: {
+                                                normal: {
+                                                    color: "blue",
+                                                    lineStyle: {
+                                                        color: "blue"
+                                                    }
+                                                }
+                                            },
+                                        }
+                                    ]
+                                })
+                            }
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="shanp_list bg">
+            <div class="g_time_t">
+                <h2 class="h1">支付通道占比</h2>
+            </div>
+            <div class="shanp_list_c">
+                <div id="shanp" style="width: 100%;height:230px;"></div>
+                <script type="text/javascript">
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart31 = echarts.init(document.getElementById('shanp'));
+                    myChart31.setOption({
+                        legend: {
+                            right: 0,
+                            top: 30,
+                            height: 160,
+                            itemWidth: 10,
+                            itemHeight: 10,
+                            itemGap: 10,
+                            orient: 'vertical',
+                            left: 'right',
+                            data:[
+                                {
+                                    name: '支付宝',
+
+                                    icon: "roundRect",   //  这个字段控制形状  类型包括 circle，rect ，roundRect，triangle，diamond，pin，arrow，none
+                                    // itemWidth: 5,  // 设置宽度
+                                    // itemHeight: 5, // 设置高度
+                                    // itemGap: 10 ,// 设置间距
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: '花呗',
+                                    // 强制设置图形为圆。
+                                    icon: 'roundRect',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: '其他',
+                                    // 强制设置图形为圆。
+                                    icon: 'roundRect',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: 'POS机',
+                                    // 强制设置图形为圆。
+                                    icon: 'roundRect',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: '微信支付',
+                                    // 强制设置图形为圆。
+                                    icon: 'roundRect',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                }
+                            ]
+                        },
+                        calculable: true,
+                        // color:['#00fffd','#0185d5','#00bad2','#03bd60','#29d08a'],
+                        color: ['#00fcf9', '#2f89cf', '#4cb9cf', '#53b666', '#62c98d', '#205acf', '#c9c862', '#c98b62', '#c962b9', '#7562c9', '#c96262', '#c25775', '#00b7be'],
+                        tooltip : {
+                            trigger: 'item',
+                            formatter: "{b} : {c} ({d}%)"
+                        },
+                        // xAxis:{ data:[]},
+                        series : {
+                            name:'半径模式',
+                            type:'pie',
+                            radius : [25, 80],
+                            center : ['40%', '45%'],
+                            roseType : 'radius',
+                            // data:[
+                            //     {value:10, name:'支付宝'},
+                            //     {value:45, name:'花呗'},
+                            //     {value:25, name:'其他'},
+                            //     {value:20, name:'POS机'},
+                            //     {value:20, name:'微信支付'}
+                            // ]
+                            data:[]
+                        }
+
+                    })
+                    $.ajax({
+                        // url:'http://face.zjquanyu.com/api/api.php?act=payWay&token=3cab7ce4142608c0f40c785b5ab5ca24',
+                        url:'../data/data31.json',
+                        type:'get',
+                        async:false,
+                        // cache:false,
+                        success:function (data) {
+                            // console.log(data.data)
+                            // console.log(typeof (data.data))
+                            // console.log(data.data[1].TotalAmount)
+                            let data_31 = []
+                            $.each(data.data,function (i, v) {
+                                let data = {'value':v.TotalAmount,'name':v.trans_payment}
+                                data_31.push(data)
+                            })
+                            // console.log(data_31)
+                            myChart31.setOption({
+                                series:{
+                                    data: data_31
+                                }
+                            })
+                        }
+                    })
+                    // 使用刚指定的配置项和数据显示图表。
+                    // myChart.setOption(option);
+                </script>
+            </div>
+        </div>
+        <div class="shana_list bg">
+            <div class="g_time_t">
+                <h2 class="h1">移动支付行业比例</h2>
+            </div>
+            <div class="shana_list_c">
+                <div id="shana" style="width: 100%;height:230px;"></div>
+                <script type="text/javascript">
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart32 = echarts.init(document.getElementById('shana'));
+                    myChart32.setOption({
+                        legend: {
+                            x : 'center',
+                            y : 'bottom',
+                            data:[
+                                {
+                                    name: '超市',
+                                    // 强制设置图形为圆。
+                                    icon: 'circle',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: '宾馆',
+                                    // 强制设置图形为圆。
+                                    icon: 'circle',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: '母婴用品',
+                                    // 强制设置图形为圆。
+                                    icon: 'circle',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: '美容',
+                                    // 强制设置图形为圆。
+                                    icon: 'circle',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },{
+                                    name: 'KTV',
+                                    // 强制设置图形为圆。
+                                    icon: 'circle',
+                                    // 设置文本为红色
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                }
+                            ]
+                        },
+                        color: ['#00fcf9', '#2f89cf', '#4cb9cf', '#53b666', '#62c98d', '#205acf', '#c9c862', '#c98b62', '#c962b9', '#7562c9', '#c96262', '#c25775', '#00b7be'],
+                        tooltip : {
+                            trigger: 'item',
+                            formatter: "{b} : {c} ({d}%)"
+                        },
+                        // calculable : true,
+                        series : {
+                            name:'面积模式',
+                            type:'pie',
+                            radius : [50, 80],
+                            center : ['50%', '40%'],
+                            roseType : 'area',
+                            // data:[
+                            //     {value:10, name:'超市'},
+                            //     {value:5, name:'宾馆'},
+                            //     {value:15, name:'母婴用品'},
+                            //     {value:25, name:'美容'},
+                            //     {value:20, name:'KTV'}
+                            // ]
+                            data:[]
+                        }
+                    });
+                    $.ajax({
+                        url:'../data/data32.json',
+                        type:'get',
+                        success:function (data) {
+                            // console.log(data.data)
+                            let data_32 = []
+                            $.each(data.data,function (i, v) {
+                                let data = {'value':v.TotalAmount,'name':v.trade_name}
+                                data_32.push(data)
+                            })
+                            // console.log(data_31)
+                            myChart32.setOption({
+                                series:{
+                                    data: data_32
+                                }
+                            })
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+        <div class="shuc_list bg">
+            <div class="g_time_t">
+                <h2 class="h1">TOP5城市</h2>
+            </div>
+            <div class="shuc_list_c">
+                <div id="shuc" style="width: 100%;height:230px;"></div>
+                <script type="text/javascript">
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart33 = echarts.init(document.getElementById('shuc'));
+                    myChart33.setOption({
+                        legend: {
+                            data:['总交易额'],
+                            textStyle:{color: '#888'},
+                            tooltip: {
+                                show: true,
+                                trigger: 'axis'
+                            },
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                        },
+                        xAxis: {
+                            data: ["温州市","宁波市","上海","长沙市","海口","北京"],
+                            axisLabel: {
+                                show: true,
+                                textStyle: {
+                                    color: '#888',  //更改坐标轴文字颜色
+                                    fontSize : 12      //更改坐标轴文字大小
+                                }
+                            },
+                            axisTick: {
+                                show: false
+                            },
+                            axisLine:{
+                                lineStyle:{
+                                    color:'#fff',
+                                    opacity: 0.2  //更改坐标轴颜色
+                                }
+                            }
+                        },
+                        yAxis: {
+                            type: 'value',
+                            //设置轴线的属性
+                            axisLine:{
+                                lineStyle:{
+                                    color:'#fff',
+                                    opacity: 0.2
+                                }
+                            },
+                            axisLabel: {
+                                show: true,
+                                textStyle: {
+                                    color: '#888',  //更改坐标轴文字颜色
+                                    fontSize : 12      //更改坐标轴文字大小
+                                }
+                            },
+                            //设置网格线颜色
+                            splitLine: {
+                                show: true,
+                                lineStyle:{
+                                    color: ['#fff'],
+                                    width: 1,
+                                    type: 'solid',
+                                    opacity:0.2
+                                }
+                            },
+                            name:'金额',
+
+                        },
+                        series: [{
+                            name: '总交易额',
+                            type: 'bar',
+                            data: [200, 480, 250, 90, 80, 100],
+                            barWidth : 30,//柱图宽度
+                            barGap:'-50%',//柱图间距
+                            itemStyle: {
+                                normal: {
+                                    //这里是重点
+                                    color: 'lightblue',
+                                    opacity:.6
+                                }
+                            }
+                        }]
+                    });
+                    $.ajax({
+                        url:'../data/data33.json',
+                        type:'get',
+                        success:function (data) {
+                            // console.log(data.data)
+                            let data_Name = []
+                            let data_data = []
+                            $.each(data.data,function (i, v) {
+                                let data = v.TotalAmount
+                                let data1 = v.store_city
+                                data_data.push(data)
+                                data_Name.push(data1)
+                            })
+                            myChart33.setOption({
+                                xAxis: {
+                                    // data: ["温州市","宁波市","上海","长沙市","海口","北京"],
+                                    data:data_Name,
+                                    axisLabel: {
+                                        show: true,
+                                        textStyle: {
+                                            color: '#888',  //更改坐标轴文字颜色
+                                            fontSize : 12      //更改坐标轴文字大小
+                                        }
+                                    },
+                                    axisTick: {
+                                        show: false
+                                    },
+                                    axisLine:{
+                                        lineStyle:{
+                                            color:'#fff',
+                                            opacity: 0.2  //更改坐标轴颜色
+                                        }
+                                    }
+                                },
+                                series: [{
+                                    name: '总交易额',
+                                    type: 'bar',
+                                    // data: [200, 480, 250, 90, 80, 100],
+                                    data:data_data,
+                                    barWidth : 30,//柱图宽度
+                                    barGap:'-50%',//柱图间距
+                                    itemStyle: {
+                                        normal: {
+                                            //这里是重点
+                                            color: 'lightblue',
+                                            opacity:.6
+                                        }
+                                    }
+                                }]
+                            })
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="foot">
+        <img src="../img/lockdata.png" alt="">
+    </div>
+</footer>
+<script>
+    time();
+    setInterval('time()',1000)
+    $(function () {
+        // 字体-上下无缝滚动
+        //定义div的class属性
+        var $this = $(".scroll_c");
+        // console.log($this);
+        //定义一个定时器的属性
+        var scrollTimer;
+        //鼠标悬停在页面上时页面停止翻转
+        $this.hover(function () {
+            //清除定时器
+            clearInterval(scrollTimer);
+            //鼠标离开时，页面继续翻转
+        }, function () {
+            scrollTimer = setInterval(function () {
+                scrollNews($this);
+            }, 2000);
+        }).trigger("mouseout");
+        //定义一个属性
+        function scrollNews(nature) {
+            // console.log(nature);
+            //文字从ul第一个开始轮转
+            var scroll = nature.find("ul:first");
+            //定义li的第一个文字的高度
+            var lineHeight = scroll.find("li:first").height();
+            scroll.animate({ "margin-top": -lineHeight + "px" }, 600, function () {
+                scroll.css({ "margin-top": "0px" }).find("li:first").appendTo(scroll);
+            });
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+header{
+    position: relative;
+}
+.msg{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+.msg>img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+
+.scroll_div{
+    width: 100%;
+    padding: 5px 0 5px 25px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: white;
+    height: 28px;
+    /*white-space: nowrap;*/
+    overflow: hidden;
+}
+.scroll_div ul{
+    display: inline-block;
+}
+.scroll_div li{
+    display: inline-block;
+    float: left;
+}
+.scroll_div a{
+    display: inline-block;
+    width: 100%;
+    color: white;
+}
+
+
+.logo{
+    width: 320px;
+    height: 95px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -160px;
+}
+.logo>img{
+    display: block;
+    width: 320px;
+    height: 95px;
+}
+.h_msg{
+    padding: 8px 30px;
+    width: 100%;
+    overflow: hidden;
+}
+.img_l,.img_r{
+    width: 50%;
+    float: left;
+}
+.img_l{
+    text-align: left;
+}
+.img_r{
+    text-align: right;
+}
+.img_l>img{
+    display: inline-block;
+    width: 30%;
+}
+.img_r>img{
+    display: inline-block;
+    width: 50%;
+}
+
+.g_time,.g_null{
+    float: left;
+    overflow: hidden;
+}
+.g_time{
+    width: 60%;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+    box-sizing: border-box;
+}
+.g_time_t{
+    width: 100%;
+    padding: 10px 30px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.g_time_t>h1{
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 400;
+}
+.h1{
+    width: 100%;
+    color: #00fcf9;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+.g_time_t>h1>span{
+    font-size: 12px;
+}
+.time{
+    position: absolute;
+    bottom: 2px;
+    right: 30px;
+    font-size: 12px;
+    color: white;
+}
+.g_time_c{
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.g_time_c>span{
+    width: 100%;
+    font-family: 'tapeworm';
+    font-size: 80px;
+    line-height: 100px;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 10px 0;
+    float: right;
+    color: #00fcf9;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.g_null{
+    width: 40%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+.count_lists{
+    width: 100%;
+    overflow: hidden;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.count_lists>li{
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+.count_lists>li>img{
+    display: inline-block;
+    width: 32px;
+    margin: 20px auto 10px;
+}
+.count_lists>li>p{
+    width: 100%;
+    color: #00fcf9;
+    font-size: 32px;
+    font-family: 'tapeworm';
+    margin: 5px auto;
+    padding: 0;
+}
+.count_lists>li>span{
+    color: white;
+    font-size: 14px;
+    display: block;
+    margin-top: 30px;
+}
+
+/*图*/
+.scroll_list,.zhi_list{
+    float: left;
+}
+.zhi_list{
+    width: 44.5%;
+    margin-left: 0.5%;
+}
+.scroll_list{
+    width: 55%;
+    overflow: hidden;
+}
+.shanp_list,.shana_list,.shuc_list{
+    float: left;
+}
+.shanp_list,.shana_list{
+    width: 30%;
+    margin-right: 0.5%;
+}
+.shuc_list{
+    width: 39%;
+}
+.scroll_t,.scroll_c{
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 0;
+}
+.scroll_t{
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.scroll_t>li,.scroll_c>li{
+    float: left;
+    font-size: 12px;
+    color: white;
+}
+.scroll_c>li{
+    width: 100%;
+    padding: 5px 0;
+    overflow: hidden;
+}
+.scroll_c>li>span{
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+.scroll_t>li:nth-child(1),.scroll_c>li>span:nth-child(1){
+    width: 30%;
+}
+.scroll_t>li:nth-child(2),.scroll_c>li>span:nth-child(2){
+    width: 10%;
+}
+.scroll_t>li:nth-child(3),.scroll_c>li>span:nth-child(3){
+    width: 20%;
+}
+.scroll_t>li:nth-child(4),.scroll_c>li>span:nth-child(4){
+    width: 20%;
+}
+.scroll_t>li:nth-child(5),.scroll_c>li>span:nth-child(5){
+    width: 20%;
+}
+.foot{
+    width: 60px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+.foot>img{
+    display: inline-block;
+    width: 100%;
+}

@@ -1,0 +1,111 @@
+{
+  "err": "",
+  "res": "",
+  "data": [
+    {
+      "trans_id": "1",
+      "trans_store": "温州鹿城区大南王晓章便利店",
+      "trans_amount": "6.21",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "3",
+      "trans_store": "温州鹿城区大南王晓章便利店",
+      "trans_amount": "25.36",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "4",
+      "trans_store": "宁波奉化世纪物美超市",
+      "trans_amount": "6.21",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "5",
+      "trans_store": "温州鹿城区大南王晓章便利店",
+      "trans_amount": "25.36",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "6",
+      "trans_store": "温州鹿城区大南王晓章便利店",
+      "trans_amount": "125.36",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "7",
+      "trans_store": "宁波奉化世纪物美超市",
+      "trans_amount": "26.21",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "8",
+      "trans_store": "HIRAMALA BORATORIES",
+      "trans_amount": "250.96",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "9",
+      "trans_store": "宁波市海逸精品宾馆",
+      "trans_amount": "45.56",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "10",
+      "trans_store": "宁波市海逸精品宾馆",
+      "trans_amount": "23.00",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "11",
+      "trans_store": "温州鹿城区大南王晓章便利店",
+      "trans_amount": "25.36",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "12",
+      "trans_store": "宁波奉化世纪物美超市",
+      "trans_amount": "6.21",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "13",
+      "trans_store": "安安孕婴服装用品",
+      "trans_amount": "85.90",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "14",
+      "trans_store": "海南联辉家贸易有限公司",
+      "trans_amount": "74.21",
+      "trans_frequency": "50",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "15",
+      "trans_store": "Heloskin科技美肤管理中心",
+      "trans_amount": "150.01",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    },
+    {
+      "trans_id": "16",
+      "trans_store": "sf;kd;ksd;ks",
+      "trans_amount": "96.00",
+      "trans_frequency": "1",
+      "trans_virtual": "0"
+    }
+  ]
+}

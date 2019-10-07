@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header,main,footer,section{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+section{
+    margin: 5px 0;
+    text-align: center;
+}
+a{
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    width: 100%;
+    background: url("../img/mainbg.jpg");
+    background-size: 100%;
+}
+.bg{
+    background: rgba(0,0,0,.2);
+    border-radius: 2px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}

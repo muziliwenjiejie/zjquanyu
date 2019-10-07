@@ -1,0 +1,31 @@
+{
+  "err": "",
+  "res": "",
+  "data": [
+    {
+      "trans_id": "1",
+      "TotalAmount": "373.54",
+      "trans_payment": "支付宝"
+    },
+    {
+      "trans_id": "2",
+      "TotalAmount": "414.61",
+      "trans_payment": "花呗"
+    },
+    {
+      "trans_id": "7",
+      "TotalAmount": "26.21",
+      "trans_payment": "其他"
+    },
+    {
+      "trans_id": "8",
+      "TotalAmount": "296.52",
+      "trans_payment": "POS机"
+    },
+    {
+      "trans_id": "14",
+      "TotalAmount": "74.21",
+      "trans_payment": "微信支付"
+    }
+  ]
+}

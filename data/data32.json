@@ -1,0 +1,31 @@
+{
+  "err": "",
+  "res": "",
+  "data": [
+    {
+      "trans_id": "1",
+      "TotalAmount": "533.66",
+      "trade_name": "超市"
+    },
+    {
+      "trans_id": "8",
+      "TotalAmount": "319.52",
+      "trade_name": "宾馆"
+    },
+    {
+      "trans_id": "13",
+      "TotalAmount": "85.90",
+      "trade_name": "母婴用品"
+    },
+    {
+      "trans_id": "15",
+      "TotalAmount": "150.01",
+      "trade_name": "美容"
+    },
+    {
+      "trans_id": "16",
+      "TotalAmount": "96.00",
+      "trade_name": "KTV"
+    }
+  ]
+}
